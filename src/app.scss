@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+// *************************** components ***************************
+.login{
+    .login-bg{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        background: linear-gradient(#00b4d89d, #90e1efe3), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80') no-repeat;
+    } 
+}
+.sign-up{
+    .login-bg{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        background: linear-gradient(#00b4d89d, #90e1efe3), url('https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80') no-repeat;
+        background-size: cover;
+    }
+}
+
+// *************************** overrides ***************************
+.form-floating{
+    label{
+        opacity: 0.6;
+    }
+    .form-control{
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #3d3d3d;
+        &:focus{
+            box-shadow: none;
+            border-color: cadetblue;
+        }
+    }
+}
+// *************************** utils ***************************
+a{
+    color: #00b4d8;
+}
+.cus-btn{
+    color: white;
+    background: linear-gradient(90deg,#00b4d8, #90e0ef);
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    &:hover{
+        color: white !important;
+        filter: brightness(0.9);
+    }
+}
