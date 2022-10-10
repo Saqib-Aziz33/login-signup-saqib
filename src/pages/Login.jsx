@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FacebookBtn from "../components/elements/FacebookBtn"
 import {Link} from 'react-router-dom'
 
 function Login() {
+  useEffect(() => {
+    window.scrollTo(0,0)
+    const loginInfo = localStorage.getItem('login')
+    if(loginInfo){
+      console.log(loginInfo)
+    }
+    else{
+      console.log('no data in local storage')
+    }
+  }, [])
+
   const initialState = {
     email: '',
     password: ''
@@ -15,16 +26,18 @@ function Login() {
 
   function handleSubmit(e){
     e.preventDefault()
-    console.table(formData)
+    localStorage.setItem('login', JSON.stringify(formData))
+    // sessionStorage.setItem('login', JSON.stringify(formData))
+    console.log('saved to local storage')
     setFormData(initialState)
   }
 
   return (
     <div className="login container my-5">
       <div className="row rounded" style={{boxShadow: '1px 1px 10px 1px rgba(0,0,0,0.1)'}}>
-      <section className="login-bg col-md-6 d-none d-md-block animate__animated animate__backInLeft"></section>
+      <section className="login-bg col-md-6 d-none d-md-block animate__animated animate__bounceInUp"></section>
 
-        <section className="col-md-6 text-center py-4 animate__animated animate__backInRight">
+        <section className="col-md-6 text-center py-4 animate__animated animate__bounceIn">
           <img
             height={120}
             className="d-block mx-auto"
